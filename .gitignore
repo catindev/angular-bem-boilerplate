@@ -1,5 +1,6 @@
 assets/vendors/
 node_modules/
+bower_components/
 index.html
 npm-debug.log
 assets/build.js

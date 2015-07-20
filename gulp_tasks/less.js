@@ -9,11 +9,11 @@ module.exports = function (gulp) {
 
 	gulp.task('less', function() {
 	    return  gulp.src([ 'components/**/*.less' ])
-	    .pipe(less()) 
-	    .pipe(cssBase64())
-	    .pipe(concat('build.css'))
-	    .pipe(autoprefixer('last 10 versions', 'ie 9'))  
-	    //.pipe(minifyCSS({keepBreaks: false}))
+			.pipe(cssBase64({ maxWeightResource: 3276800 }))
+			.pipe(concat('build.less'))
+			.pipe(less())
+	    .pipe(autoprefixer('last 10 versions', 'ie 9'))
+	    .pipe(minifyCSS({ keepBreaks: false }))
 	    .pipe(gulp.dest('assets/'));
 	});
 
