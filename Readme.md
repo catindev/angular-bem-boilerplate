@@ -1,6 +1,6 @@
 # ngComponents
 
-My recipe for building apps: AngularJS + BEM
+My recipe for building frontend: AngularJS + BEM
 
 Commit: sh cmmt.sh branch "comment text"
 
