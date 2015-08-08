@@ -15,4 +15,4 @@ My recipe for building frontend: AngularJS + BEM
 
 *Bonus* - push script: sh cmmt.sh branch "comment text"
 
-**Demo project**: [getflat.me](https://github.com/catindev/getflat-mobile).
+**Demo project**: [getflat.me](https://github.com/catindev/getflat-mobile)
