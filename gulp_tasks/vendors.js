@@ -1,6 +1,5 @@
 var concat = require('gulp-concat');
 var minifyCSS = require('gulp-minify-css');
-var autoprefixer = require('gulp-autoprefixer');
 var uglify = require('gulp-uglify');
 var lib = require('bower-files')();
 
@@ -14,12 +13,9 @@ module.exports = function (gulp) {
 	});
 
 	gulp.task('vendors-css', function(){
-	    var v = lib.ext('css').files
-	    v.push( __dirname + '/declaration/style.css');
-	    v.push( __dirname + '/assets/fonts/fonts.css');
-	    return gulp.src(v)
+			return gulp.src(lib.ext('css').files)
 	        .pipe(concat('vendors.css'))
-	        .pipe(minifyCSS({ keepBreaks: false }))        
+	        .pipe(minifyCSS({ keepBreaks: false }))
 	        .pipe(gulp.dest('assets/'));
 	});
 

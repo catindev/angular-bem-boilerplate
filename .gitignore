@@ -1,12 +1,5 @@
-assets/vendors/
-node_modules/
 bower_components/
+node_modules/
 index.html
 npm-debug.log
-assets/build.js
-assets/components.css
-assets/ctemplates.js
-assets/build.less
-assets/build.css
-assets/vendors.js
-assets/vendors.css
+assets/

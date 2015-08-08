@@ -1,22 +1,20 @@
-angular.module('webapp', [ 
-    'ngRoute', 
-    'tenphi.bem'
-])
+var fs = require("fs"),
+		compress = require('compression'),
+		express = require('express'),
+		app = express();
 
+app.use(compress({ threshold: 0 }));
+app.use('/assets', express.static('assets', { maxAge: 86400 }));
 
-.config(function ($routeProvider) {
-    $routeProvider.
-/*        when('/', {
-            templateUrl: 'components/first-page/template.html',
-            controller: 'firstPageController'
-        }).   */             
-        otherwise({ redirectTo: '/' });
-})
+var frontendRoutes = [ '/' ];
 
-.controller('webAppController', 
-    function ($rootScope) {
-	
-        var app = this;
+frontendRoutes.forEach(function(route) {
+	app.get(route,function (request,response) {
+		var fileStream = fs.createReadStream(__dirname + '/index.html');
+		fileStream.on('data', function (data) { response.write(data); });
+		fileStream.on('end', function() { response.end(); });
+	});
+});
 
-    }
-);
+app.listen(3000);
+console.info('App server at', 3000);

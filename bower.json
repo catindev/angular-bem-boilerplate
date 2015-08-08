@@ -1,27 +1,22 @@
 {
-  "name": "angular-bem-boilerplate",
-  "version": "0.1.0",
+  "name": "ngComponents",
+  "version": "0.2.0",
   "authors": [
     "Владимир Тицкий <Vladimir.Titskiy@inessoft.kz>"
   ],
-  "description": "AngularJS BEM boilerplate",
+  "description": "My recipe for building apps",
   "main": "index.html",
   "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
-    "test",
     "tests"
   ],
   "dependencies": {
     "angular": "1.4",
     "angular-bem": "~0.2.2",
-    "normalize.css": "~3.0.3",
     "angular-route": "~1.4.1",
-    "angular-cookies": "~1.4",
-    "angular-local-storage": "~0.2.2",
-    "lodash": "~3.9.3",
-    "ungrid": "~1.1.0"
+    "normalize.css": "~3.0.3"
   }
 }

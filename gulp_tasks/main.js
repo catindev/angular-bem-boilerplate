@@ -4,17 +4,17 @@ var fs = require('fs');
 
 module.exports = function (gulp) {
 
-    gulp.task('index', [ 'vendors', 'js', 'less' ], function(){
+    gulp.task('main', [ 'vendors', 'js', 'less' ], function(){
         var d = new Date();
         var prefix = "?v=" + d.getTime();
         var css = [ 'vendors', 'build' ];
         var js  = [ 'vendors', 'build' ];
 
-        return fs.readFile('./components/webapp-template/template.html', 'utf8', function (err,data) {
+        return fs.readFile('./components/webapp/template.html', 'utf8', function (err,data) {
             if (err) return console.log(err);
             var cssTpl = '\n', jsTpl = '\n';
-            for(var file in css) cssTpl+= '<link rel="stylesheet" type="text/css" href="assets/'+ css[file] +'.css' + prefix + '">' + '\n';
-            for(var file in js) jsTpl+= '<script src="assets/'+ js[file] +'.js' + prefix + '"></script>' + '\n';
+            for(var file in css) cssTpl+= '<link rel="stylesheet" type="text/css" href="/assets/'+ css[file] +'.css' + prefix + '">' + '\n';
+            for(var file in js) jsTpl+= '<script src="/assets/'+ js[file] +'.js' + prefix + '"></script>' + '\n';
 
             var result = data.replace("<build/>",  dformat(d, "dd.mm HH:MM"))
                 .replace("<app/>", pinfo.name)
