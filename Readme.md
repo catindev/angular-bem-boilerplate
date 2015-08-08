@@ -14,3 +14,5 @@ My recipe for building frontend: AngularJS + BEM
 * Restart gulp
 
 *Bonus* - push script: sh cmmt.sh branch "comment text"
+
+**Demo project**: [getflat.me](https://github.com/catindev/getflat-mobile).
